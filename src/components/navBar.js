@@ -2,6 +2,10 @@ import React from 'react';
 
 const NavBar = () => (
   <div className="navbar">
+    <a href="/" data-testid="company-logo">
+      <img src="/logo.png" alt="Company Logo" />
+    </a>
+
     <ul>
       <li>
         <a href="/"> Home </a>
@@ -15,7 +19,6 @@ const NavBar = () => (
       <li>
         <a href="/search"> Search </a>
       </li>
-
     </ul>
   </div>
 );
