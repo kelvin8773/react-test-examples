@@ -48,8 +48,12 @@ const LoginForm = () => (
                 onBlur={handleBlur}
                 value={values.email}
               />
-              {errors.email && touched.email && errors.email}
             </label>
+
+            <div data-testid="error-email" >
+              {errors.email && touched.email && errors.email}
+            </div>
+
             <label>
               Password:
             <input
@@ -60,7 +64,11 @@ const LoginForm = () => (
                 value={values.password}
               />
             </label>
-            {errors.password && touched.password && errors.password}
+
+            <div data-testid="error-password" >
+              {errors.password && touched.password && errors.password}
+            </div>
+
             <button type="submit" disabled={isSubmitting}>
               Submit
           </button>
