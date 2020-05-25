@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapShot testing 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="navbar"
+  >
+    <a
+      data-testid="company-logo"
+      href="/"
+    >
+      <img
+        alt="Company Logo"
+        src="/logo192.png"
+      />
+    </a>
+    <ul>
+      <li>
+        <a
+          href="/"
+        >
+           Home 
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+        >
+           About 
+        </a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+        >
+           Contact 
+        </a>
+      </li>
+      <li>
+        <a
+          href="/search"
+        >
+           Search 
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h1>
+      Anywhere in your app!
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Email:
+        <input
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </label>
+      <div
+        data-testid="error-email"
+      />
+      <label>
+        Password:
+        <input
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </label>
+      <div
+        data-testid="error-password"
+      />
+      <button
+        disabled={false}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+`;

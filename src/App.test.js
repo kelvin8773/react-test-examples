@@ -1,9 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import App from './App';
 
-xtest('demo testing', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/welcome/i);
-  expect(linkElement).toBeInTheDocument();
+test('snapShot testing', () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
