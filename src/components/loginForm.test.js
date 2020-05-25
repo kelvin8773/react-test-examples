@@ -36,8 +36,9 @@ describe('Input unit test', () => {
 
 const loginEntries = [
   { email: 'abc.test.com', password: '12345678' },
-  { email: 'example@abc', password: 'passW12D' },
-  // { email: 'john_done@testing.com', password: 'Pa$$w0rd' },
+  { email: 'example@abc', password: 'pass$12D' },
+  { email: 'jane@yahoo.com', password: 'passW34E' },
+  { email: 'john_done@testing.com', password: 'Pa$$w0rd' },
 ];
 
 const checkEmail = (email) => {
@@ -61,9 +62,8 @@ describe('Input integrate Test', () => {
   test.each(loginEntries)('check combination for %s',
     async (loginEntry) => {
       render(<LoginForm />);
-      let emailValid;
-      let passwordValid;
-      emailValid = checkEmail(loginEntry.email);
+      const emailValid = checkEmail(loginEntry.email);
+      const passwordValid = checkPassword(loginEntry.password);
 
       const emailInput = screen.getByLabelText(/email/i);
       const passwordInput = screen.getByLabelText(/password/i);
@@ -78,11 +78,11 @@ describe('Input integrate Test', () => {
       fireEvent.change(passwordInput, { target: { value: loginEntry.password } });
       fireEvent.blur(passwordInput);
 
-      // passwordValid = checkPassword(loginEntry.password);
-
       if (!passwordValid) {
         expect(await screen.findByText(/Password is too simple/i)).not.toBeNull();
       };
+
+      await act(() => Promise.resolve()); // To avoid act wrapping warning
     }
   )
 })
