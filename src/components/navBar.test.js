@@ -14,13 +14,13 @@ test.each(links)(
   (link) => {
     const { getByText } = render(<NavBar />);
     const linkDom = getByText(link.text);
-    expect(linkDom.getAttribute("href")).toBe(link.location);
+    expect(linkDom).toHaveAttribute("href", link.location);
   }
 );
 
 test('Check if have logo and link to home page', () => {
   const { getByAltText, getByTestId } = render(<NavBar />);
   const logoDom = getByTestId(/company-logo/);
-  expect(logoDom.getAttribute("href")).toBe("/");
+  expect(logoDom).toHaveAttribute("href", "/");
   expect(getByAltText(/Company Logo/)).toBeInTheDocument();
 });

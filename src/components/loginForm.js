@@ -17,7 +17,18 @@ const LoginForm = () => (
           errors.email = 'Invalid email address';
         }
 
-        if (!values.password) errors.password = 'Required';
+        if (!values.password) {
+          errors.password = 'Required';
+        } else if (
+          !/(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(values.password)) {
+          // refer link - https://www.itworld.com/article/2833081/how-to-validate-password-strength-using-a-regular-expression.html
+          // The password length must be greater than or equal to 8
+          // The password must contain one or more uppercase characters
+          // The password must contain one or more lowercase characters
+          // The password must contain one or more numeric values
+          // The password must contain one or more special characters
+          errors.password = 'Password is too simple';
+        }
 
         return errors;
       }}
