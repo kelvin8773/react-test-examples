@@ -60,6 +60,7 @@ exports[`snapShot testing 1`] = `
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="Your Email Address"
           type="email"
           value=""
         />
@@ -73,6 +74,7 @@ exports[`snapShot testing 1`] = `
           name="password"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder="password here"
           type="password"
           value=""
         />

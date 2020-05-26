@@ -1,3 +1,8 @@
+export const checkName = (name) => {
+  return (name.length >= 3) && (name.length <= 30);
+}
+
+
 export const checkEmail = (email) => {
   const emailRegx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   return emailRegx.test(email);

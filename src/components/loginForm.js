@@ -52,6 +52,7 @@ const LoginForm = () => (
             <input
                 type="email"
                 name="email"
+                placeholder="Your Email Address"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
@@ -67,6 +68,7 @@ const LoginForm = () => (
             <input
                 type="password"
                 name="password"
+                placeholder="password here"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.password}
