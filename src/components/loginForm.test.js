@@ -63,14 +63,20 @@ describe('Input integrate Test', () => {
 
       if (!emailValid) {
         expect(await screen.findByText(/invalid email address/i)).not.toBeNull();
-      };
+        console.log(loginEntry.email + ' is invalid email address.');
+      }
 
       fireEvent.change(passwordInput, { target: { value: loginEntry.password } });
       fireEvent.blur(passwordInput);
 
       if (!passwordValid) {
         expect(await screen.findByText(/Password is too simple/i)).not.toBeNull();
+        console.log(loginEntry.password + ' is too simple to a password.');
       };
+
+      if (emailValid && passwordValid) {
+        console.log(loginEntry.email + ' and ' + loginEntry.password + ' are good to go!')
+      }
 
       await act(() => Promise.resolve()); // To avoid act wrapping warning
     }
