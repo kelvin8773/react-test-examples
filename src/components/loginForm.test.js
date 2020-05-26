@@ -1,5 +1,9 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
+import {
+  checkEmail,
+  checkPassword,
+} from '../utilities/check';
 import LoginForm from './loginForm';
 
 describe('Input unit test', () => {
@@ -40,23 +44,6 @@ const loginEntries = [
   { email: 'jane@yahoo.com', password: 'passW34E' },
   { email: 'john_done@testing.com', password: 'Pa$$w0rd' },
 ];
-
-const checkEmail = (email) => {
-  const emailRegx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  return emailRegx.test(email);
-};
-
-const checkPassword = (password) => {
-  const passwordRegx = /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-  // reference link 
-  // https://www.itworld.com/article/2833081/how-to-validate-password-strength-using-a-regular-expression.html
-  // The password length must be greater than or equal to 8
-  // The password must contain one or more uppercase characters
-  // The password must contain one or more lowercase characters
-  // The password must contain one or more numeric values
-  // The password must contain one or more special characters
-  return passwordRegx.test(password);
-};
 
 describe('Input integrate Test', () => {
   test.each(loginEntries)('check combination for %s',
