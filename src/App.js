@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/navBar';
-import LoginForm from './components/loginForm';
+// import LoginForm from './components/loginForm';
 import SignupForm from './components/signupForm';
 
 function App() {
