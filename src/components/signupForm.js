@@ -64,7 +64,9 @@ const SignupForm = () => (
               />
             </label>
 
-            <p> {errors.name && touched.name && errors.name} </p>
+            <p style={{ 'color': 'red' }}>
+              {errors.name && touched.name && errors.name}
+            </p>
 
             <label>
               Email:
@@ -77,7 +79,7 @@ const SignupForm = () => (
                 value={values.email}
               />
             </label>
-            <p>
+            <p style={{ 'color': 'red' }}>
               {errors.email && touched.email && errors.email}
             </p>
 
@@ -93,7 +95,7 @@ const SignupForm = () => (
               />
             </label>
 
-            <p>
+            <p style={{ 'color': 'red' }}>
               {errors.password && touched.password && errors.password}
             </p>
 
