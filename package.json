@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-jest-dom": "^2.1.0"
+    "eslint-plugin-jest-dom": "^2.1.0",
+    "jest-axe": "^3.4.0"
   }
 }

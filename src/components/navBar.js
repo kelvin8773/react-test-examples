@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NavBar = () => (
-  <div className="navbar">
+  <div className="navbar" role='navigation'>
     <a href="/" data-testid="company-logo">
       <img src="/logo192.png" alt="Company Logo" />
     </a>
