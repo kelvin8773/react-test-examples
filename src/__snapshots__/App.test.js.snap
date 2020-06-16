@@ -5,7 +5,8 @@ exports[`App snapShot testing 1`] = `
   className="App"
 >
   <div
-    className="navbar"
+    className="sc-AxjAm hzjiyx"
+    role="navigation"
   >
     <a
       data-testid="company-logo"

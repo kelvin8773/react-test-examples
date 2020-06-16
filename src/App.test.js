@@ -14,7 +14,7 @@ describe('App', () => {
     expect(results).toHaveNoViolations();
   });
 
-  xtest('snapShot testing', () => {
+  test('snapShot testing', () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchSnapshot();
   });

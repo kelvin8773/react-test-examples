@@ -1,12 +1,30 @@
 import React from 'react';
+import Styled from 'styled-components';
+
+const NavBarWrapper = Styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const Logo = Styled.img`
+  max-width: 50px;
+`;
+
+const LinkItems = Styled.ul`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+`;
 
 const NavBar = () => (
-  <div className="navbar" role='navigation'>
+  <NavBarWrapper role='navigation'>
     <a href="/" data-testid="company-logo">
-      <img src="/logo192.png" alt="Company Logo" />
+      <Logo src="/logo192.png" alt="Company Logo" />
     </a>
 
-    <ul>
+    <LinkItems>
       <li>
         <a href="/"> Home </a>
       </li>
@@ -19,9 +37,9 @@ const NavBar = () => (
       <li>
         <a href="/search"> Search </a>
       </li>
-    </ul>
+    </LinkItems>
 
-  </div>
+  </NavBarWrapper>
 );
 
 export default NavBar;
