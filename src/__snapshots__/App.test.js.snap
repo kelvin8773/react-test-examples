@@ -1,55 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapShot testing 1`] = `
+exports[`App snapShot testing 1`] = `
 <div
   className="App"
 >
   <div
-    className="navbar"
+    className="sc-AxjAm jbvpYd"
+    role="navigation"
   >
     <a
       data-testid="company-logo"
       href="/"
+      onClick={[Function]}
     >
       <img
         alt="Company Logo"
+        className="sc-AxirZ kfDgON"
         src="/logo192.png"
       />
     </a>
-    <ul>
-      <li>
-        <a
-          href="/"
-        >
-           Home 
-        </a>
-      </li>
-      <li>
-        <a
-          href="/about"
-        >
-           About 
-        </a>
-      </li>
-      <li>
-        <a
-          href="/contact"
-        >
-           Contact 
-        </a>
-      </li>
-      <li>
-        <a
-          href="/search"
-        >
-           Search 
-        </a>
-      </li>
-    </ul>
+    <div
+      className="sc-AxiKw dVKru"
+    >
+      <a
+        className="sc-AxhCb fqbCyO"
+        href="/"
+        onClick={[Function]}
+      >
+         Home 
+      </a>
+      <a
+        className="sc-AxhCb fqbCyO"
+        href="/news"
+        onClick={[Function]}
+      >
+         News 
+      </a>
+      <a
+        className="sc-AxhCb fqbCyO"
+        href="/project"
+        onClick={[Function]}
+      >
+         Project 
+      </a>
+      <a
+        className="sc-AxhCb fqbCyO"
+        href="/blog"
+        onClick={[Function]}
+      >
+         Blog 
+      </a>
+      <a
+        className="sc-AxhCb fqbCyO"
+        href="/about"
+        onClick={[Function]}
+      >
+         About 
+      </a>
+    </div>
   </div>
   <div>
     <h1>
-      Anywhere in your app!
+      Welcome to React Testing Example!
     </h1>
     <form
       onSubmit={[Function]}
@@ -83,7 +95,10 @@ exports[`snapShot testing 1`] = `
           value=""
         />
       </label>
-      <p
+
+      <div
+        data-testid="error-email"
+
         style={
           Object {
             "color": "red",
@@ -101,7 +116,10 @@ exports[`snapShot testing 1`] = `
           value=""
         />
       </label>
-      <p
+
+      <div
+        data-testid="error-password"
+
         style={
           Object {
             "color": "red",
