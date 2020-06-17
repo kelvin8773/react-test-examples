@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 
 const LoginForm = () => (
   <div>
-    <h1>Anywhere in your app!</h1>
+    <h1>Welcome to React Testing Example!</h1>
     <Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {
@@ -55,7 +55,7 @@ const LoginForm = () => (
               />
             </label>
 
-            <div data-testid="error-email" >
+            <div data-testid="error-email" style={{ 'color': 'red' }}>
               {errors.email && touched.email && errors.email}
             </div>
 
@@ -70,7 +70,7 @@ const LoginForm = () => (
               />
             </label>
 
-            <div data-testid="error-password" >
+            <div data-testid="error-password" style={{ 'color': 'red' }}>
               {errors.password && touched.password && errors.password}
             </div>
 

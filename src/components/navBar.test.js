@@ -4,9 +4,9 @@ import NavBar from './navBar';
 
 const links = [
   { text: 'Home', location: "/" },
-  { text: 'Contact', location: "/contact" },
+  { text: 'Project', location: "/project" },
+  { text: 'Blog', location: "/blog" },
   { text: 'About', location: "/about" },
-  { text: 'Search', location: "/search" },
 ];
 
 test.each(links)(

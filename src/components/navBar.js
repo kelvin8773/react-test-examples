@@ -2,20 +2,29 @@ import React from 'react';
 import Styled from 'styled-components';
 
 const NavBarWrapper = Styled.div`
+  height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 `;
 
 const Logo = Styled.img`
-  max-width: 50px;
+  max-width: 45px;
 `;
 
-const LinkItems = Styled.ul`
+const LinkItems = Styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 50%;
+`;
+
+const LinkItem = Styled.a`
+  text-decoration: none;
+  &:hover{
+    color: pink;
+    text-decoration: underline;
+  }
 `;
 
 const NavBar = () => (
@@ -25,18 +34,10 @@ const NavBar = () => (
     </a>
 
     <LinkItems>
-      <li>
-        <a href="/"> Home </a>
-      </li>
-      <li>
-        <a href="/about"> About </a>
-      </li>
-      <li>
-        <a href="/contact"> Contact </a>
-      </li>
-      <li>
-        <a href="/search"> Search </a>
-      </li>
+      <LinkItem href="/"> Home </LinkItem>
+      <LinkItem href="/project"> Project </LinkItem>
+      <LinkItem href="/blog"> Blog </LinkItem>
+      <LinkItem href="/about"> About </LinkItem>
     </LinkItems>
 
   </NavBarWrapper>
