@@ -1,28 +1,33 @@
 import React from 'react';
 import { Formik } from 'formik';
 import {
+  checkName,
   checkEmail,
   checkPassword,
 } from '../utilities/check';
 
-const LoginForm = () => (
+const SignupForm = () => (
   <div>
-    <h1>Welcome to React Testing Example!</h1>
+    <h1>Anywhere in your app!</h1>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ name: '', email: '', password: '' }}
       validate={values => {
         const errors = {};
-        if (!values.email) {
-          errors.email = 'Required';
+        if (!values.name) {
+          errors.name = 'Name is Required'
+        } else if (!checkName(values.name)) {
+          errors.name = `invalid name`;
         }
-        else if (
-          !checkEmail(values.email)
-        ) {
+
+        if (!values.email) {
+          errors.email = 'Email is Required';
+        }
+        else if (!checkEmail(values.email)) {
           errors.email = 'Invalid email address';
         }
 
         if (!values.password) {
-          errors.password = 'Required';
+          errors.password = 'Password is Required';
         } else if (!checkPassword(values.password)) {
           errors.password = 'Password is too simple';
         }
@@ -48,6 +53,22 @@ const LoginForm = () => (
       }) => (
           <form onSubmit={handleSubmit}>
             <label>
+              Name:
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name here"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+              />
+            </label>
+
+            <p style={{ 'color': 'red' }}>
+              {errors.name && touched.name && errors.name}
+            </p>
+
+            <label>
               Email:
             <input
                 type="email"
@@ -58,10 +79,9 @@ const LoginForm = () => (
                 value={values.email}
               />
             </label>
-
-            <div data-testid="error-email" style={{ 'color': 'red' }}>
+            <p style={{ 'color': 'red' }}>
               {errors.email && touched.email && errors.email}
-            </div>
+            </p>
 
             <label>
               Password:
@@ -75,9 +95,9 @@ const LoginForm = () => (
               />
             </label>
 
-            <div data-testid="error-password" style={{ 'color': 'red' }}>
+            <p style={{ 'color': 'red' }}>
               {errors.password && touched.password && errors.password}
-            </div>
+            </p>
 
             <button type="submit" disabled={isSubmitting}>
               Submit
@@ -88,4 +108,4 @@ const LoginForm = () => (
   </div>
 );
 
-export default LoginForm;
+export default SignupForm;
