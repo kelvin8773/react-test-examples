@@ -32,12 +32,13 @@ const LinkItem = Styled(Link)`
 
 const NavBar = () => (
   <NavBarWrapper role='navigation'>
-    <a href="/" data-testid="company-logo">
+    <Link to="/" data-testid="company-logo">
       <Logo src="/logo192.png" alt="Company Logo" />
-    </a>
+    </Link>
 
     <LinkItems>
       <LinkItem to="/"> Home </LinkItem>
+      <LinkItem to="/news"> News </LinkItem>
       <LinkItem to="/project"> Project </LinkItem>
       <LinkItem to="/blog"> Blog </LinkItem>
       <LinkItem to="/about"> About </LinkItem>

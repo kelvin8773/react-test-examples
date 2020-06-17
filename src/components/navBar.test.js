@@ -8,6 +8,7 @@ import NavBar from './navBar';
 
 const links = [
   { text: 'Home', location: "/" },
+  { text: 'News', location: "/news" },
   { text: 'Project', location: "/project" },
   { text: 'Blog', location: "/blog" },
   { text: 'About', location: "/about" },
