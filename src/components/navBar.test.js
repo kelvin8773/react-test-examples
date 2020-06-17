@@ -1,5 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+
+import { render, screen } from '@testing-library/react';
 import NavBar from './navBar';
 
 const links = [
@@ -9,18 +13,30 @@ const links = [
   { text: 'About', location: "/about" },
 ];
 
-test.each(links)(
-  "Check if Nav Bar have %s link.",
-  (link) => {
-    const { getByText } = render(<NavBar />);
-    const linkDom = getByText(link.text);
-    expect(linkDom).toHaveAttribute("href", link.location);
-  }
-);
+describe('NavBar', () => {
+  const setup = (component) => (
+    render(
+      <Router>
+        {component}
+      </Router>
+    )
+  )
 
-test('Check if have logo and link to home page', () => {
-  const { getByAltText, getByTestId } = render(<NavBar />);
-  const logoDom = getByTestId(/company-logo/);
-  expect(logoDom).toHaveAttribute("href", "/");
-  expect(getByAltText(/Company Logo/)).toBeInTheDocument();
-});
+  test.each(links)(
+    "Check if Nav Bar have %s link.",
+    (link) => {
+      setup(<NavBar />);
+      const linkDom = screen.getByText(link.text);
+      expect(linkDom).toHaveAttribute("href", link.location);
+    }
+  );
+
+  test('Check if have logo and link to home page', () => {
+    setup(<NavBar />);
+    const logoDom = screen.getByTestId(/company-logo/);
+    expect(logoDom).toHaveAttribute("href", "/");
+    expect(screen.getByAltText(/Company Logo/)).toBeInTheDocument();
+  });
+
+})
+

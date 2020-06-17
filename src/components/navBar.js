@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Link
+} from "react-router-dom";
 import Styled from 'styled-components';
 
 const NavBarWrapper = Styled.div`
@@ -19,7 +22,7 @@ const LinkItems = Styled.div`
   width: 50%;
 `;
 
-const LinkItem = Styled.a`
+const LinkItem = Styled(Link)`
   text-decoration: none;
   &:hover{
     color: pink;
@@ -34,10 +37,10 @@ const NavBar = () => (
     </a>
 
     <LinkItems>
-      <LinkItem href="/"> Home </LinkItem>
-      <LinkItem href="/project"> Project </LinkItem>
-      <LinkItem href="/blog"> Blog </LinkItem>
-      <LinkItem href="/about"> About </LinkItem>
+      <LinkItem to="/"> Home </LinkItem>
+      <LinkItem to="/project"> Project </LinkItem>
+      <LinkItem to="/blog"> Blog </LinkItem>
+      <LinkItem to="/about"> About </LinkItem>
     </LinkItems>
 
   </NavBarWrapper>

@@ -24,24 +24,28 @@ exports[`App snapShot testing 1`] = `
       <a
         className="sc-AxhCb fqbCyO"
         href="/"
+        onClick={[Function]}
       >
          Home 
       </a>
       <a
         className="sc-AxhCb fqbCyO"
         href="/project"
+        onClick={[Function]}
       >
          Project 
       </a>
       <a
         className="sc-AxhCb fqbCyO"
         href="/blog"
+        onClick={[Function]}
       >
          Blog 
       </a>
       <a
         className="sc-AxhCb fqbCyO"
         href="/about"
+        onClick={[Function]}
       >
          About 
       </a>
