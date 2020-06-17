@@ -13,7 +13,6 @@ export default () => {
       .then(res => {
         if (res.length > 0) {
           setPosts(res);
-          console.log(res);
         } else {
           throw new Error('No such subreddit!');
         }

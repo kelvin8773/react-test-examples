@@ -7,9 +7,9 @@ const TableWrapper = Styled.table`
   box-sizing: border-box;
   width: 968px;
   margin: 12px auto 0;
-  border: solid 1px #bbb;
   font-size: 18px;
   color: #0f0f0f;
+  text-align: left;
 `;
 
 const NewsTable = ({ news }) => {
@@ -35,10 +35,10 @@ const NewsTable = ({ news }) => {
             news.map((post) => (
               <tr key={post.id}>
                 <td style={{
-                  'max-width': '400px',
-                  'padding': '10px 30px',
-                  'text-overflow': 'ellipsis',
-                  'white-space': 'nowrap',
+                  'maxWidth': '400px',
+                  'padding': '10px 30px 10px 0',
+                  'textOverflow': 'ellipsis',
+                  'whiteSpace': 'nowrap',
                   'overflow': 'hidden',
                 }}>
                   <a
