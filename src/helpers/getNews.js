@@ -8,7 +8,7 @@ const BASE_URL = 'https://api.pushshift.io/reddit/submission/search/';
 export default async (subreddit) => {
   // const oneYearBefore = dayjs().subtract(1, 'years').unix();
   const threeMonthAgo = dayjs().subtract(3, 'months').unix();
-  const numberOfPosts = 10;
+  const numberOfPosts = 5;
 
   const url = `${BASE_URL}?subreddit=${subreddit}&after=${threeMonthAgo}&size=${numberOfPosts}&sort=desc&sort_type=score`;
 

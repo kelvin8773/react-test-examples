@@ -13,7 +13,6 @@ import Blog from './pages/Blog';
 import Project from './pages/Project';
 import About from './pages/About';
 
-
 function App() {
   return (
     <div className="App">
