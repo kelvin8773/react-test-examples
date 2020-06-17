@@ -31,7 +31,7 @@ export default () => {
       <div>
         {loading && 'Loading news ...'}
         {errorMsg && <p>{errorMsg}</p>}
-        {!errorMsg && !loading && <NewsTable news={posts} />}
+        {!errorMsg && !loading && <NewsTable news={posts} subreddit={subreddit} />}
       </div>
     </>
 

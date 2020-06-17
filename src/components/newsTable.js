@@ -5,16 +5,16 @@ import Styled from 'styled-components';
 
 const TableWrapper = Styled.table`
   box-sizing: border-box;
-  width: 968px;
+  width: 1024px;
   margin: 12px auto 0;
   font-size: 18px;
   color: #0f0f0f;
   text-align: left;
 `;
 
-const NewsTable = ({ news }) => {
+const NewsTable = ({ news, subreddit }) => {
   // const getMin = (utc) => dayjs.unix(utc).minute();
-  const REDDIT_USER_BASE_URL = 'https://www.reddit.com/user/';
+  const REDDIT_BASE_URL = 'https://www.reddit.com/';
 
   return (
     <>
@@ -28,6 +28,7 @@ const NewsTable = ({ news }) => {
             <th>Score</th>
             <th>Comments</th>
             <th>Author</th>
+            <th>SubReddit</th>
           </tr>
         </thead>
         <tbody>
@@ -57,9 +58,18 @@ const NewsTable = ({ news }) => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={REDDIT_USER_BASE_URL + post.author}
+                    href={REDDIT_BASE_URL + `user/` + post.author}
                   >
                     {post.author}
+                  </a>
+                </td>
+                <td>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={REDDIT_BASE_URL + `r/` + subreddit}
+                  >
+                    r/{subreddit}
                   </a>
                 </td>
               </tr>
@@ -74,6 +84,7 @@ const NewsTable = ({ news }) => {
 
 NewsTable.propTypes = {
   news: PropTypes.arrayOf(PropTypes.object).isRequired,
+  subreddit: PropTypes.string.isRequired,
 };
 
 export default NewsTable;

@@ -6,7 +6,6 @@ import dayjs from 'dayjs';
 const BASE_URL = 'https://api.pushshift.io/reddit/submission/search/';
 
 export default async (subreddit) => {
-  // const oneYearBefore = dayjs().subtract(1, 'years').unix();
   const threeMonthAgo = dayjs().subtract(3, 'months').unix();
   const numberOfPosts = 5;
 
