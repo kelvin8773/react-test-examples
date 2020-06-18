@@ -1,11 +1,13 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 
+console.log('use Real API');
+
 // API Reference - https://reddit-api.readthedocs.io/en/latest/#searching-submissions
 
 const BASE_URL = 'https://api.pushshift.io/reddit/submission/search/';
 
-export default async (subreddit) => {
+const getNews = async (subreddit) => {
   const threeMonthAgo = dayjs().subtract(3, 'months').unix();
   const numberOfPosts = 5;
 
@@ -33,3 +35,4 @@ export default async (subreddit) => {
   return null;
 };
 
+export default getNews;

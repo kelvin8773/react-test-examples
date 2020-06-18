@@ -22,8 +22,8 @@ export default () => {
       })
       .finally(() => {
         setLoading(false);
-      })
-  }, [posts])
+      });
+  }, [])
 
   return (
     <>
@@ -34,6 +34,5 @@ export default () => {
         {!errorMsg && !loading && <NewsTable news={posts} subreddit={subreddit} />}
       </div>
     </>
-
   )
 }

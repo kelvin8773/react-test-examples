@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer';
 import { axe, toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
+jest.mock('./helpers/getNews');
 
 describe('App', () => {
   test('should have no accessiblity violations', async () => {

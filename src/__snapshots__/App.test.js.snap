@@ -67,24 +67,6 @@ exports[`App snapShot testing 1`] = `
       onSubmit={[Function]}
     >
       <label>
-        Name:
-        <input
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          placeholder="Enter your name here"
-          type="text"
-          value=""
-        />
-      </label>
-      <p
-        style={
-          Object {
-            "color": "red",
-          }
-        }
-      />
-      <label>
         Email:
         <input
           name="email"
@@ -95,10 +77,8 @@ exports[`App snapShot testing 1`] = `
           value=""
         />
       </label>
-
       <div
         data-testid="error-email"
-
         style={
           Object {
             "color": "red",
@@ -116,10 +96,8 @@ exports[`App snapShot testing 1`] = `
           value=""
         />
       </label>
-
       <div
         data-testid="error-password"
-
         style={
           Object {
             "color": "red",
